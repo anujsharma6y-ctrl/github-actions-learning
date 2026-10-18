@@ -1,0 +1,23 @@
+
+name: My First CI Workflow
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say hello
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Show runner information
+        run: |
+          echo "CI pipeline is running"
+          echo "Operating system:"
+          uname -s
